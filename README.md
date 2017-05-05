@@ -1,2 +1,2 @@
 # MusicalPitchExp
-Scripts for collecting and analyzing speech-gesture data from Swedish and Turkish speakers describing pitch variation
+Scripts for playing stimuli and analyzing speech-gesture data from Swedish and Turkish speakers describing sound clips
