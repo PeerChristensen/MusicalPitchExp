@@ -1,0 +1,28 @@
+#GENERATES STIMULUS LIST WITH LENGTH (OF AUDIO CLIP) PAIRINGS
+set.seed(34372)
+a=sample(1:25)
+b=sample(1:25)
+stimList1=data.frame(a,b)
+stimList1[stimList1$a==stimList1$b,] #check for identical column values for each row
+
+#scale stimuli to shorter time intervals
+aSec=a/5
+bSec=b/5
+stimList1=data.frame(stimList1,aSec,bSec)
+
+#df to html
+library(xtable)
+stimListTable1<-xtable(stimList1)
+print.xtable(stimListTable1, type="html", file="stimList1.html")
+
+#second set
+set.seed(342)
+a2 = sample(1:10,25,replace=T)/5
+b2 = sample(1:10,25,replace=T)/5
+stimList2=data.frame(a2,b2)
+stimList2[stimList2$a2==stimList2$b2,] #check for identical column values for each row
+colnames(stimList2) = c("A","B")
+
+stimListTable2<-xtable(stimList2)
+print.xtable(stimListTable2, type="html", file="stimList2.html")
+
