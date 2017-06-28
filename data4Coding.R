@@ -24,3 +24,14 @@ dfCode=dfCode[with(dfCode,order(File,Trial,Part)),] #sort data frame
 # export data frame as html table
 codeTab<-xtable(dfCode)
 print.xtable(CodeTab, type="html", file="data_to_code.html")
+
+# a second set
+set.seed(342)
+a2 = sample(1:10,25,replace=T)/5
+b2 = sample(1:10,25,replace=T)/5
+stimList2=data.frame(a2,b2)
+stimList2[stimList2$a2==stimList2$b2,] #check for identical column values for each row
+colnames(stimList2) = c("A","B")
+
+stimListTable2<-xtable(stimList2)
+print.xtable(stimListTable2, type="html", file="stimList2.html")
