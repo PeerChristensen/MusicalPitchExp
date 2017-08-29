@@ -1,4 +1,10 @@
 #GENERATES STIMULUS LIST WITH LENGTH (OF AUDIO CLIP) PAIRINGS
+
+install.packages("xtable")
+library(xtable)
+
+# FIRST SET #
+
 set.seed(34372)
 a=sample(1:25)
 b=sample(1:25)
@@ -10,19 +16,30 @@ aSec=a/5
 bSec=b/5
 stimList1=data.frame(stimList1,aSec,bSec)
 
-#df to html
-library(xtable)
+#dataframe to html
 stimListTable1<-xtable(stimList1)
 print.xtable(stimListTable1, type="html", file="stimList1.html")
 
-#second set
-set.seed(342)
-a2 = sample(1:10,25,replace=T)/5
-b2 = sample(1:10,25,replace=T)/5
+
+# SECOND SET #
+
+set.seed(39813)
+a2 = sample(1:15,25,replace=T)/5
+b2 = sample(1:15,25,replace=T)/5
 stimList2=data.frame(a2,b2)
 stimList2[stimList2$a2==stimList2$b2,] #check for identical column values for each row
 colnames(stimList2) = c("A","B")
 
 stimListTable2<-xtable(stimList2)
 print.xtable(stimListTable2, type="html", file="stimList2.html")
+
+
+# THIRD SET #
+
+set.seed(3791)
+longList = round(runif(50,1,12)/4,1)
+stimList3=data.frame(longList[1:25],longList[26:50])
+colnames(stimList3) = c("a","b")
+stimList3[stimList3$a==stimList3$b,] #check for identical column values for each row
+
 
