@@ -20,7 +20,6 @@ stimList1=data.frame(stimList1,aSec,bSec)
 stimListTable1<-xtable(stimList1)
 print.xtable(stimListTable1, type="html", file="stimList1.html")
 
-
 # SECOND SET #
 
 set.seed(39813)
@@ -30,9 +29,9 @@ stimList2=data.frame(a2,b2)
 stimList2[stimList2$a2==stimList2$b2,] #check for identical column values for each row
 colnames(stimList2) = c("A","B")
 
+#dataframe to html
 stimListTable2<-xtable(stimList2)
 print.xtable(stimListTable2, type="html", file="stimList2.html")
-
 
 # THIRD SET #
 
@@ -42,4 +41,18 @@ stimList3=data.frame(longList[1:25],longList[26:50])
 colnames(stimList3) = c("a","b")
 stimList3[stimList3$a==stimList3$b,] #check for identical column values for each row
 
+#dataframe to html
+stimListTable3<-xtable(stimList3)
+print.xtable(stimListTable3, type="html", file="stimList3.html")
+
+
+# FOURTH SET # 
+#durations identical to Bylund & Athanasopoulos study
+# 9 durations, 1000-5000 ms, increments of 500 ms
+
+set.seed(921)
+set=seq(1000,5000,500)
+stimList4=data.frame(sample(set),sample(set))
+stimListTable3<-xtable(stimList4)
+print.xtable(stimListTable4, type="html", file="stimList4.html")
 
