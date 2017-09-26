@@ -8,7 +8,8 @@ pacman::p_load(xtable)
 # load and subset data
 setwd("/Users/peerchristensen/Desktop")
 df= read.csv2("swe1.csv",na.strings = c(""))
-df=df[!is.na(df$Part) & !is.na(df$Gesture) ,]
+df=df[!is.na(df$Trial) & !is.na(df$Part) & 
+        !is.na(df$Words) &!is.na(df$Gesture),]
 dfG=df[df$Gesture==1,]
 
 # number of observations for independent coding
